@@ -53,7 +53,7 @@ public class HomeController {
 		try {
 			
 			if(!agreement) {
-				System.out.println("you have not agreed the trems and conditions");
+				System.out.println("you have---- not agreed the trems and conditions");
 				throw new Exception("you have not agreed the trems and conditions");
 			}
 			
