@@ -181,7 +181,38 @@ public class UserController {
 		
 		return "redirect:/user/show-contact";
 	}
+	@PostMapping("/update/{cid}")
+	public String updateContact(@PathVariable("cid") Integer cid, Model model) {
+		Contact contact= contactRepository.findById(cid).get();
+		model.addAttribute("title", "update contact");
+		model.addAttribute("contact",contact);
+		return "normal/update_contact";
+	}
 	
-	
-	
+	//updating the form 
+	/*
+	 * @PostMapping("/update-process") public String updateProcess(@ModelAttribute
+	 * Contact contact,Model m ,@RequestParam("profileImage") MultipartFile
+	 * file,Principal principal ) { //data coming from the page that handl by
+	 * modelattribute
+	 * 
+	 * try { //image if(!file.isEmpty()) {
+	 * 
+	 * } User user =this.userRepository.getUserByUserName(principal.getName());
+	 * contact.setUser(user);
+	 * 
+	 * 
+	 * this.contactRepository.save(contact);
+	 * 
+	 * 
+	 * } catch (Exception e) { // TODO: handle exception }
+	 * 
+	 * System.out.println(contact.getName());
+	 * 
+	 * return "";
+	 * 
+	 * 
+	 * 
+	 * }
+	 */
 }
