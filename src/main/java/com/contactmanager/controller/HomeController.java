@@ -22,8 +22,8 @@ import jakarta.validation.Valid;
 public class HomeController {
 
 	
-	  @Autowired 
-	  private BCryptPasswordEncoder passwordEncoder;
+	@Autowired 
+	private BCryptPasswordEncoder passwordEncoder;
 	 
 	@Autowired
 	private UserRepository userRepository;
@@ -67,9 +67,6 @@ public class HomeController {
 			user.setEnabled(true);
 			user.setImageUrl("default.png");
 			user.setPassword(passwordEncoder.encode(user.getPassword()));
-			
-			//System.out.println("Aggrement=" +agreement);
-			//System.out.println("USER="+user);
 			
 			User result1 = this.userRepository.save(user);
 			m.addAttribute("user",new User());

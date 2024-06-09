@@ -17,33 +17,6 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class MyConfig{
 
-	/*
-	 * @Bean public UserDetailsService getUserDetailsService() { return new
-	 * UserDetailsServiceImpl(); }
-	 * 
-	 * @Bean public BCryptPasswordEncoder passwordEncoder() { return new
-	 * BCryptPasswordEncoder(); }
-	 * 
-	 * @Bean public DaoAuthenticationProvider authenticationProvider() {
-	 * DaoAuthenticationProvider daoAuthenticationProvider = new
-	 * DaoAuthenticationProvider();
-	 * 
-	 * daoAuthenticationProvider.setUserDetailsService(this.getUserDetailsService())
-	 * ;
-	 * 
-	 * daoAuthenticationProvider.setPasswordEncoder(passwordEncoder()); return
-	 * daoAuthenticationProvider; }
-	 * 
-	 * //configure method protected void configure(AuthenticationManagerBuilder
-	 * auth) throws Exception {
-	 * auth.authenticationProvider(authenticationProvider()); }
-	 * 
-	 * protected void configure(HttpSecurity http)throws Exception{
-	 * http.authorizeRequests().requestMatchers("/admin/**").hasRole("ADMIN")
-	 * .requestMatchers("/user/**").hasRole("USER")
-	 * .requestMatchers("/**").permitAll().and().formLogin().and().csrf().disable();
-	 * }
-	 */
 	
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder()

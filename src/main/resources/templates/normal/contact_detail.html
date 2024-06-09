@@ -27,6 +27,7 @@
 							<tr>
 								<th scope="col">#Id</th>
 								<th scope="col" th:text="${contact.cid}"></th>
+								
 							</tr>
 						</thead>
 						<tbody>
@@ -53,8 +54,8 @@
 				</div>
 
 				<div class="container mt-3">
-					<button class="btn btn-danger btn-sm btn-block">Delete</button>
-					<button class="btn btn-primary btn-sm btn-block">Update</button>
+					<a class="btn btn-danger btn-sm btn-block"  th:href="@{'/user/delete/'+${contact.cid}}">Delete</a>
+					<a class="btn btn-primary btn-sm btn-block" >Update</a>
 				</div>
 
 

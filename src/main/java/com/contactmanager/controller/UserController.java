@@ -150,18 +150,18 @@ public class UserController {
 		
 		Optional<Contact> contactOptional = contactRepository.findById(cid);
 		Contact contact = contactOptional.get();
-	
-		String userName = principal.getName();
-		
-		User user = userRepository.getUserByUserName(userName);
-		
-		if(user.getId()==contact.getUser().getId()) {
-			m.addAttribute("contact",contact);
-			m.addAttribute("title",contact.getName());
-		}
-		
-		//System.out.println("contact"+contact);
-	
+//	
+//		String userName = principal.getName();
+//		
+//		User user = userRepository.getUserByUserName(userName);
+//		
+//		if(user.getId()==contact.getUser().getId()) {
+//			m.addAttribute("contact",contact);
+//			m.addAttribute("title",contact.getName());
+//		}
+		m.addAttribute("contact",contact);
+		m.addAttribute("title",contact.getName());
+
 		return "normal/contact_detail";
 	}
 	
